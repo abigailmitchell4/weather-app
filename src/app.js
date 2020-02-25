@@ -23,7 +23,7 @@ app.use(express.static(publicDirPath))
 //paths
 app.get('', (req, res) => {
   res.render('index', {
-    title: 'Weather app'
+    title: 'Weather App'
   })
 })
 
@@ -65,17 +65,17 @@ app.get('/weather', (req, res) => {
   }) 
 })
 
-app.get('/weather/*', (req, res) => {
-  res.render('error404', {
-    title: '404',
-    message: `Sorry, can't find weather page.`
-  })
-})
+// app.get('/*', (req, res) => {
+//   res.render('error404', {
+//     title: '404',
+//     message: `Sorry, can't find weather page.`
+//   })
+// })
 
 
 app.get('*', (req, res) => {
   res.render('error404', {
-    title: '404',
+    title: 'Error 404',
     message: `Sorry, page does not exist.`
   })
 })
